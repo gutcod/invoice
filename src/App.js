@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Terminal } from "./pages/Terminal";
 import { NavBar } from "./components/Navbar";
 import { Alert } from "./components/Alert";
 import { AlertState } from "./context/alert/AlertState";
 import { FirebaseState } from "./context/firebase/FirebaseState";
-import { Buyers } from "./pages/Buyers";
+import Buyers from "./pages/Buyers";
 import Auth from "./container/Auth";
 // import { Page404 } from "./pages/Page404";
 
