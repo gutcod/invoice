@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Terminal } from "./pages/Terminal";
 import { NavBar } from "./components/Navbar";
 import { Alert } from "./components/Alert";
@@ -7,7 +7,7 @@ import { AlertState } from "./context/alert/AlertState";
 import { FirebaseState } from "./context/firebase/FirebaseState";
 import Buyers from "./pages/Buyers";
 import Auth from "./container/Auth";
-// import { Page404 } from "./pages/Page404";
+import { Page } from "./pages/Page404";
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
               <Route path="/" exact component={Auth} />
               <Route path="/terminal" component={Terminal} />
               <Route path="/buyers" component={Buyers} />
-              {/* <Redirect path="/" exact component={Page404} /> */}
+              <Redirect to="/404" component={Page} />
             </Switch>
           </div>
         </BrowserRouter>

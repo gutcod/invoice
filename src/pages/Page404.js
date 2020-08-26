@@ -1,9 +1,7 @@
 import React from "react";
 
-export const Page404 = () => {
-  return (
-    <div>
-      <h1>404</h1>
-    </div>
-  );
-};
+export const Page = () => (
+  <div className="container p-5">
+    <h1>404 Page</h1>
+  </div>
+);

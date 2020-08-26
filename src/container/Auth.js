@@ -47,6 +47,7 @@ export default class Auth extends Component {
         authData
       );
       console.log(response.data);
+      console.log(response.data.idToken);
     } catch (e) {
       console.log(e);
     }
@@ -65,6 +66,7 @@ export default class Auth extends Component {
       );
 
       console.log(response.data);
+      console.log(response.data.idToken);
     } catch (e) {
       console.log(e);
     }
