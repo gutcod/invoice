@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Auth.scss";
 import axios from "axios";
 import is from "is_js";
-import Input from "./UI/Input";
 
 export default class Auth extends Component {
   state = {
@@ -47,7 +46,6 @@ export default class Auth extends Component {
         authData
       );
       console.log(response.data);
-      console.log(response.data.idToken);
     } catch (e) {
       console.log(e);
     }
@@ -66,7 +64,6 @@ export default class Auth extends Component {
       );
 
       console.log(response.data);
-      console.log(response.data.idToken);
     } catch (e) {
       console.log(e);
     }
@@ -124,7 +121,8 @@ export default class Auth extends Component {
     return Object.keys(this.state.formControls).map((controlName, index) => {
       const control = this.state.formControls[controlName];
       return (
-        <Input
+        <input
+          className="form-control"
           key={controlName + index}
           type={control.type}
           value={control.value}
@@ -147,24 +145,22 @@ export default class Auth extends Component {
 
           <form onSubmit={this.submitHandler} className="form-group">
             {this.renderInputs()}
-            <div className="pt-4">
-              <button
-                className="btn btn-primary m-2"
-                type="submit"
-                onClick={this.loginHandler}
-                disabled={!this.state.isFormValid}
-              >
-                Войти
-              </button>
-              <button
-                className="btn btn-primary"
-                type="submit"
-                onClick={this.registerHandler}
-                disabled={!this.state.isFormValid}
-              >
-                Зарегистрироваться
-              </button>
-            </div>
+            <button
+              className="btn btn-primary"
+              type="submit"
+              onClick={this.loginHandler}
+              disabled={!this.state.isFormValid}
+            >
+              Войти
+            </button>
+            <button
+              className="btn btn-primary"
+              type="submit"
+              onClick={this.registerHandler}
+              disabled={!this.state.isFormValid}
+            >
+              Зарегистрироваться
+            </button>
           </form>
         </div>
       </div>
